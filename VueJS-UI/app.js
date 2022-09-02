@@ -1,6 +1,9 @@
 const routes = [
-    {path: '/productoview', component: productoview},
-    {path: '/about', component: about},
+    {path: '/alimentosview', component: alimentosview},
+    {path: '/cocinaview', component: cocinaview},
+    {path: '/limpiezaview', component: limpiezaview},
+    {path: '/proveedoresview', component: proveedoresview},
+    {path: '/informacion', component: informacion}
 ]
 
 const router = VueRouter.createRouter({
