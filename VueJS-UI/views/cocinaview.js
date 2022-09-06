@@ -28,7 +28,7 @@ const cocinaview = {
                         <button type="button" 
                         class="btn btn-dark mr-1"
                         data-bs-toggle="modal" data-bs-target="#updateModal" 
-                        @click="editClick(producto)">
+                        @click="editClick(cocina)">
                             <i class="bi bi-pencil-square"></i>
                         </button>
                         <button type="button" 
@@ -102,7 +102,7 @@ const cocinaview = {
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text">Proveedor</span>
-                            <input type="number" class="form-control" v-model="proveedor">
+                            <input type="text" class="form-control" v-model="proveedor">
                         </div>
                         <button type="button" @click="updateClick()"
                         class="btn btn-secondary">
@@ -141,13 +141,13 @@ const cocinaview = {
             this.precio = 0;
             this.proveedor = '';
         },
-        editClick(producto) {
+        editClick(cocina) {
             this.modalTitle = 'Actualizar producto';
-            this.id_pro_cocina = producto.id_pro_cocina;
-            this.nombre = producto.nombre;
-            this.cantidad = producto.cantidad;
-            this.precio = producto.precio;
-            this.proveedor = producto.proveedor;
+            this.id_pro_cocina = cocina.id_pro_cocina;
+            this.nombre = cocina.nombre;
+            this.cantidad = cocina.cantidad;
+            this.precio = cocina.precio;
+            this.proveedor = cocina.proveedor;
         },
         createClick() {
             axios.post(variables.API_URL + 'cocina', {
@@ -174,7 +174,7 @@ const cocinaview = {
                 alert('Producto actualizado con exito!', response.data);
             });
         },
-        deleteClick(producto_id) {
+        deleteClick(id_pro_cocina) {
             if(!confirm('¿Esta seguro de eliminar el producto?')) {
                 return;
             }
